@@ -1,52 +1,38 @@
 const params = new URLSearchParams(window.location.search);
-
 const PLAYER_TAG = params.get("tag") || "LQ0J0G028";
 
 let updating = false;
+let calls = 0;
 
 async function updateElo() {
-    if (updating) return;
+    calls++;
+    console.log("updateElo called:", calls, new Date().toISOString());
+
+    if (updating) {
+        console.log("Skipped because already updating");
+        return;
+    }
+
     updating = true;
 
     try {
+        console.log("Starting fetch...");
+
         const response = await fetch(
             `https://brawl-stars-elo-fetcher-czynf0wsyfds.mtadct.deno.net/elo/${PLAYER_TAG}`,
             { cache: "no-store" }
         );
 
-        const data = await response.json();
+        console.log("Fetch finished:", response.status);
 
-        document.getElementById("currentElo").textContent =
-            data.current ?? "N/A";
-
-        document.getElementById("highestElo").textContent =
-            data.highest ?? "N/A";
-
-        document.getElementById("currentRank").textContent =
-            data.currentRank ?? "UNKNOWN";
-
-        document.getElementById("highestRank").textContent =
-            data.highestRank ?? "UNKNOWN";
-
-        document.getElementById("currentBadge").src =
-            data.currentBadgeUrl ?? "";
-
-        document.getElementById("highestBadge").src =
-            data.highestBadgeUrl ?? "";
-
-    } catch (error) {
-        console.error(error);
-
-        document.getElementById("currentElo").textContent = "ERR";
-        document.getElementById("highestElo").textContent = "ERR";
-
-        document.getElementById("currentRank").textContent = "ERROR";
-        document.getElementById("highestRank").textContent = "ERROR";
+    } catch (err) {
+        console.error("Fetch failed:", err);
     } finally {
         updating = false;
     }
 }
 
-//updateElo();
+updateElo();
 
-//setInterval(updateElo, 30000);
+// TEMPORARILY DISABLE THE INTERVAL
+// setInterval(updateElo, 30000);
