@@ -41,4 +41,4 @@ async function updateElo() {
 
 updateElo();
 
-setInterval(updateElo, 100);
+setInterval(updateElo, 30000);
