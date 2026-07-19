@@ -19,7 +19,7 @@ async function updateElo() {
         console.log("Starting fetch...");
 
         const response = await fetch(
-            `https://brawl-stars-elo-fetcher-czynf0wsyfds.mtadct.deno.net/elo/${PLAYER_TAG}`,
+            "https://jsonplaceholder.typicode.com/todos/1",
             { cache: "no-store" }
         );
 
