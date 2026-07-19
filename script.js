@@ -2,10 +2,16 @@ const params = new URLSearchParams(window.location.search);
 
 const PLAYER_TAG = params.get("tag") || "LQ0J0G028";
 
+let updating = false;
+
 async function updateElo() {
+    if (updating) return;
+    updating = true;
+
     try {
         const response = await fetch(
-            `https://brawl-stars-elo-fetcher-czynf0wsyfds.mtadct.deno.net/elo/${PLAYER_TAG}`
+            `https://brawl-stars-elo-fetcher-czynf0wsyfds.mtadct.deno.net/elo/${PLAYER_TAG}`,
+            { cache: "no-store" }
         );
 
         const data = await response.json();
@@ -36,6 +42,8 @@ async function updateElo() {
 
         document.getElementById("currentRank").textContent = "ERROR";
         document.getElementById("highestRank").textContent = "ERROR";
+    } finally {
+        updating = false;
     }
 }
 
