@@ -54,9 +54,9 @@ I REPEAT DO **NOT** INCLUDE `#` IN YOUR PLAYER TAG I WILL PERSONALLY CATCH YOU A
 
 5. Edit the Browser Source size if that one doesn't fit (heh)
 
-6. Enable **Refresh browser when scene becomes active** (optional)
+6. Enable **Refresh browser when scene becomes active** (optional if you DON'T have that option, otherwise just enable it...trust me)
 
-The overlay updates automatically every 30 seconds.
+The overlay updates automatically every 30 seconds (do let me know if I should decrease that).
 
 ---
 
@@ -68,10 +68,6 @@ Displayed information includes:
 
 - Current Ranked Elo
 - Highest Ranked Elo
-- Current Rank
-- Highest Rank
-- Current Rank Badge
-- Highest Rank Badge
 
 ---
 
@@ -85,7 +81,7 @@ git clone https://github.com/MTADCT/Brawl-Stars-Ranked-Stream-Overlay.git
 
 Open `index.html` in your browser.
 
-No build tools or dependencies are required.
+No build tools or dependencies are required, yeah I'm that nice.
 
 ---
 
@@ -109,17 +105,16 @@ Everything is written in plain HTML, CSS and JavaScript.
 - [ ] Animated elo changes
 - [ ] Multiple overlay themes
 - [ ] Transparent background theme
-- [ ] Compact mode
 - [ ] Automatic badge sizing
-- [ ] Better error handling
+- [ ] Better error handling (seriously it's bad lol)
 
 ---
 
 ## Contributing
 
-Pull requests and suggestions are welcome.
+Pull requests and suggestions are welcome...greatly appreciated actually.
 
-If you encounter a bug or have a feature request, feel free to open an issue.
+If you encounter a bug or have a feature request, feel free to open an issue, or DM me on my socials (@mtadct on all socials)
 
 ---
 
@@ -133,6 +128,6 @@ Brawl Stars and all related assets are trademarks of Supercell.
 
 ## License
 
-MIT License
+MIT License or whatever lmao
 
-Feel free to use, modify, and share this project.
+Feel free to use, modify, and share this project, if you claim it as your own I will leak your IP address.
