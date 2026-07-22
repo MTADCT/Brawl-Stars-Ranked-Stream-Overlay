@@ -19,7 +19,7 @@ async function updateElo() {
         console.log("Starting fetch...");
 
         const response = await fetch(
-            "https://jsonplaceholder.typicode.com/todos/1",
+            "https://YOUR-RAILWAY-DOMAIN.up.railway.app/elo/${PLAYER_TAG}",
             { cache: "no-store" }
         );
 
